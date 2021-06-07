@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "resources",
+      "type": "java.lang.String",
+      "description": "Description for resources."
+  }
+] }
