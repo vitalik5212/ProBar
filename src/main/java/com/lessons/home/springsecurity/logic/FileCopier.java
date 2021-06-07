@@ -18,7 +18,7 @@ public class FileCopier {
 
     /**
      * Method for copies files
-     * @param name's file
+     * @param fileName
      * @return path copied temp file
      */
     public static String copy(String fileName) {

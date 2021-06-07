@@ -7,6 +7,7 @@ import org.hibernate.annotations.DynamicUpdate;
 import org.springframework.lang.NonNull;
 
 import javax.persistence.*;
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
@@ -21,6 +22,7 @@ import java.util.Set;
 @Table(name = "cocktails")
 public class Cocktail implements Product, Serializable {
 
+    @Serial
     @Transient
     private static final long serialVersionUID = 1L;
 
