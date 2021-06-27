@@ -1,0 +1,119 @@
+.content {
+	display: flex;
+	flex-direction: column;
+}
+
+.first-block {
+    height: 620px;
+    background-image: url("../images/mainPage/backgroung-image.jpg");
+}
+
+.first-block img {
+    width: 325px;
+    margin-left: 355px;
+    margin-top: 160px;
+}
+
+.block {
+    height: 500px;
+    display: flex;
+    background-color: rgb(229, 229, 229);
+    color: #111111;
+}
+
+.text-block {
+    width: 35%;
+    text-align: center;
+    margin: 30px;
+}
+
+.text-block h1 {
+    margin-top: 55px;
+    font-family: 'Architects Daughter', cursive;
+}
+
+.text-block div {
+    margin: 15px auto;
+    background-color: orange;
+    height: 4px;
+    width: 42px;
+}
+
+.text-block h3 {
+    margin: 10px;
+    font-style: italic;
+    font-family: 'Dancing Script', cursive;
+    font-size: 22px;
+}
+
+.image-block {
+    width: 65%;
+    position: relative;
+}
+
+.image-block img {
+    position: absolute;
+    height: 100%;
+    width: 100%
+}
+
+.end-block {
+    height: 520px;
+    position: relative;
+}
+
+
+.end-block img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.main-footer {
+	margin: 0 auto;
+	width: 1035px;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.footer-block {
+    background-color: white;
+    height: 120px;
+}
+
+.logo-block {
+    margin: 15px;
+    float: left;
+}
+
+.logo-block img{
+    width: 77px;
+}
+
+.main-contacts-block {
+    float: right;
+    margin: 17px;
+}
+
+.main-contacts-block ul li {
+	list-style: none;
+	float: left;
+	margin: 25px 10px 25px 10px;
+}
+
+.main-contacts-block ul li a {
+	display: block;
+	text-decoration: none;
+}
+
+.footer-line {
+    height: 3px;
+    background-color: orange;
+    
+}
+
+.main-licence-block {
+	text-align: center;
+	font-size: 9px;
+}

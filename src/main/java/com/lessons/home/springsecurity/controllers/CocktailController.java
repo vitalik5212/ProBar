@@ -24,7 +24,7 @@ public class CocktailController {
                                   @RequestParam("page") Optional<Integer> page,
                                   @RequestParam("size") Optional<Integer> size) {
         int pageNumber = page.orElse(1);
-        int pageSize = size.orElse(4);
+        int pageSize = size.orElse(6);
 
         Page<Cocktail> cocktails = cocktailService.getPageCocktails(pageNumber - 1, pageSize);
 

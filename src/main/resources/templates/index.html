@@ -1,183 +1,117 @@
 <!DOCTYPE html>
-<html style="font-size: 16px;" lang="en" xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <meta name="keywords" content="organic, Our Food">
-    <meta name="description" content="">
-    <meta name="page_type" content="np-template-header-footer-from-plugin">
-    <title>Main</title>
-    <link rel="stylesheet" th:href="@{css/nicepage.css}" href="../static/css/nicepage.css" media="screen">
-    <link rel="stylesheet" th:href="@{css/Main.css}" href="../static/css/Main.css" media="screen">
-    <script class="u-script" type="text/javascript" th:src="@{js/jquery.js}" src="../static/js/jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" th:src="@{js/nicepage.js}" src="../static/js/nicepage.js" defer=""></script>
-    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster:400|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>ProBar</title>
+	<link rel="stylesheet" type="text/css" th:href="@{css/index.css}" href="../static/css/index.css">
+	<link rel="stylesheet" type="text/css" th:href="@{css/main.css}" href="../static/css/main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
+</head>
 
-    <script type="application/ld+json">{
-		"@context": "http://schema.org",
-		"@type": "Organization",
-		"name": "",
-		"url": "index.html",
-		"logo": "images/default-logo.png",
-		"sameAs": []
-}</script>
-    <meta property="og:title" content="Main">
-    <meta property="og:type" content="website">
-    <meta name="theme-color" content="#9f5400">
-    <link rel="canonical" href="index.html">
-    <meta property="og:url" content="index.html">
-  </head>
-  <body data-home-page="Main.html" data-home-page-title="Main" class="u-body u-overlap u-overlap-contrast u-overlap-transparent">
-    <header class="u-align-center-xs u-border-1 u-border-grey-25 u-clearfix u-header u-header" id="sec-fe7f"><div class="u-clearfix u-sheet u-sheet-1">
-        <a href="index.html" class="u-image u-logo u-image-1" data-image-width="80" data-image-height="40">
-          <img th:src="@{images/default-logo.png}" src="../static/images/default-logo.png" class="u-logo-image u-logo-image-1" data-image-width="80">
-        </a>
-        <form action="#" method="get" class="u-border-1 u-border-grey-15 u-search u-search-right u-search-1">
-          <button class="u-search-button" type="submit">
-            <span class="u-search-icon u-spacing-10 u-text-grey-40">
-              <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 56.966 56.966" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-b04b"></use></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg-b04b" x="0px" y="0px" viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve" class="u-svg-content"><path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"></path><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
-            </span>
-          </button>
-          <input class="u-search-input" type="search" name="search" value="" placeholder="Search">
-        </form>
-        <nav class="u-align-left u-menu u-menu-one-level u-nav-spacing-25 u-offcanvas u-menu-1" data-position="main_menu" data-responsive-from="MD">
-          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 700; text-transform: uppercase;">
-            <a class="u-button-style u-custom-active-border-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link" href="#" style="padding: 1px 0px; font-size: calc(1em + 1px);">
-              <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 302 302" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-7b92"></use></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg-7b92" x="0px" y="0px" viewBox="0 0 302 302" style="enable-background:new 0 0 302 302;" xml:space="preserve" class="u-svg-content"><g><rect y="36" width="302" height="30"></rect><rect y="236" width="302" height="30"></rect><rect y="136" width="302" height="30"></rect>
-</g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
-            </a>
-          </div>
-          <div class="u-custom-menu u-nav-container">
-            <ul class="u-nav u-spacing-30 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-50 u-text-grey-10 u-text-hover-grey-75" th:href="@{/}" href="index.html" style="padding: 10px 0px;">Main</a>
-</li><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-50 u-text-grey-10 u-text-hover-grey-75" th:href="@{cocktails}" href="cocktails.html" style="padding: 10px 0px;">Cocktails</a>
-</li><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-50 u-text-grey-10 u-text-hover-grey-75" th:href="@{alcohol}" href="Alcohol.html" style="padding: 10px 0px;">Alcohol</a>
-</li></ul>
-          </div>
-<!--            Я хз для чого воно-->
-<!--          <div class="u-custom-menu u-nav-container-collapse">-->
-<!--            <div class="u-align-center u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">-->
-<!--              <div class="u-sidenav-overflow">-->
-<!--                <div class="u-menu-close"></div>-->
-<!--                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" th:href="@{/}" href="index.html" style="padding: 8px 0px;">Main</a>-->
-<!--</li><li class="u-nav-item"><a class="u-button-style u-nav-link" th:href="@{cocktails}" href="cocktails.html" style="padding: 8px 0px;">Cocktails</a>-->
-<!--</li></ul>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>-->
-<!--          </div>-->
-        </nav>
-      </div></header> 
-    <section class="u-clearfix u-palette-2-base u-section-1" id="sec-ff00">
-      <div class="u-clearfix u-sheet u-valign-bottom u-sheet-1">
-        <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
-          <div class="u-layout">
-            <div class="u-layout-row">
-              <div class="u-container-style u-image u-layout-cell u-left-cell u-right-cell u-size-60 u-image-1">
-                <div class="u-container-layout">
-                  <img th:src="@{images/logo_black-removebg-preview1.png}" src="../static/images/logo_black-removebg-preview1.png" alt="" class="u-image u-image-contain u-image-default u-image-2" data-image-width="307" data-image-height="265"><span class="u-icon u-icon-circle u-text-palette-1-base u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 451.847 451.847"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-50ed"></use></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg-50ed" x="0px" y="0px" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 451.847 451.847;" xml:space="preserve" class="u-svg-content"><g><path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,151.157c-12.359-12.359-12.359-32.397,0-44.751   c12.354-12.354,32.388-12.354,44.748,0l171.905,171.915l171.906-171.909c12.359-12.354,32.391-12.354,44.744,0   c12.365,12.354,12.365,32.392,0,44.751L248.292,345.449C242.115,351.621,234.018,354.706,225.923,354.706z"></path>
-</g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg></span>
+<body>
+	<div class="page">
+		<header>
+			<div class="logo">
+				<a th:href="@{/}" href="index.html">
+					<img th:src="@{images/default-logo.png}" src="../static/images/default-logo.png">
+				</a>
+			</div>
+
+		<!-- 	<div th:if="!null" class="block-top-auth-profil">
+				<p><a href="#">Reg</a></p>
+				<p><a href="#">Sing in</a></p>
+			</div> -->
+
+			<div class="block-top-auth">
+				<p><a href="#">Reg</a></p>
+				<p><a href="#">Sing in</a></p>
+			</div>
+
+			<div class="top-menu">
+				<ul>
+					<li><a th:href="@{/}" href="index.html">Main</a></li>
+					<li><a th:href="@{/alcohol}" href="alcohol.html">Alkohol</a></li>
+					<li><a th:href="@{/cocktails}" href="cocktails.html">Cocktails</a></li>
+				</ul>
+			</div>
+		</header>
+
+		<div class="content">
+            
+			<div class="first-block">
+				<img th:src="@{images/mainPage/logo.png}" src="../static/images/mainPage/logo.png">
+			</div>
+
+			<div class="block">
+				<div class="text-block">
+					<h1>Head</h1>
+					<div></div>
+					<h3 th:text="${text1}">text</h3>
+				</div>
+				<div class="image-block">
+                <img th:src="@{images/mainPage/image-1.jpg}" src="../static/images/mainPage/image-1.jpg">
                 </div>
-              </div>
+			</div>
+
+            <div class="block">
+                <div class="image-block">
+                    <img th:src="@{images/mainPage/image-2.jpg}" src="../static/images/mainPage/image-2.jpg">
+                </div>
+				<div class="text-block">
+					<h1>Head</h1>
+					<div></div>
+					<h3 th:text="${text2}">text</h3>
+				</div>
+			</div>
+            <div class="block">
+				<div class="text-block">
+					<h1>Head</h1>
+					<div></div>
+					<h3 th:text="${text3}">text</h3>
+				</div>
+				<div class="image-block">
+                    <img th:src="@{images/mainPage/image-3.jpg}" src="../static/images/mainPage/image-3.jpg">
+                </div>
+			</div>
+
+			<div class="end-block">
+                <img th:src="@{images/mainPage/end-image.jpg}" src="../static/images/mainPage/end-image.jpg">
+			</div>			
+		</div>
+
+		<footer class="main-footer">
+            <div class="footer-block">
+                <div class="logo-block">
+                    <img th:src="@{images/small-logo.png}" src="../static/images/small-logo.png">
+                </div>
+                
+                <div class="main-contacts-block">
+				    <ul>
+					   <li>
+                           <a href="https://www.instagram.com/vitalik_skr" target="_blank"><img th:src="@{images/icons/black-instagram-icon.png}" src="../static/images/icons/black-instagram-icon.png"></a>
+                        </li>
+                        <li>
+                            <a href="https://t.me/vitalik_skr" target="_blank"><img th:src="@{images/icons/black-telegram-icon.png}" src="../static/images/icons/black-telegram-icon.png"></a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/vitalik-skr-6844981bb/" target="_blank"><img th:src="@{images/icons/black-linkedin-icon.png}" src="../static/images/icons/black-linkedin-icon.png"></a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/vitalik5212/ProBar" target="_blank"><img th:src="@{images/icons/github-icon.png}" src="../static/images/icons/github-icon.png"></a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="u-clearfix u-palette-2-base u-section-2" id="carousel_87dc">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
-          <div class="u-layout">
-            <div class="u-layout-row">
-              <div class="u-container-style u-grey-5 u-layout-cell u-left-cell u-size-20 u-layout-cell-1">
-                <div class="u-container-layout u-valign-middle-sm u-valign-middle-xs u-container-layout-1">
-                  <div class="u-border-5 u-border-palette-1-base u-line u-line-horizontal u-line-1"></div>
-                  <p class="u-align-center u-text u-text-1" th:text="${text1}">text 1</p>
-                </div>
-              </div>
-              <div class="u-container-style u-image u-layout-cell u-right-cell u-size-40 u-image-1" data-image-width="1920" data-image-height="1280">
-                <div class="u-container-layout"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="u-clearfix u-palette-2-base u-section-3" id="carousel_1226">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
-          <div class="u-layout">
-            <div class="u-layout-row">
-              <div class="u-container-style u-image u-layout-cell u-left-cell u-size-40 u-image-1" data-image-width="1500" data-image-height="1000">
-                <div class="u-container-layout"></div>
-              </div>
-              <div class="u-align-center u-container-style u-grey-5 u-layout-cell u-right-cell u-size-20 u-layout-cell-2">
-                <div class="u-container-layout u-valign-middle u-container-layout-2">
-                  <h2 class="u-text u-text-1">organic</h2>
-                  <div class="u-border-5 u-border-palette-1-base u-line u-line-horizontal u-line-1"></div>
-                  <p class="u-text u-text-2" th:text="${text2}">Text 2</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="u-clearfix u-palette-2-base u-section-4" id="carousel_d696">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
-          <div class="u-layout">
-            <div class="u-layout-row">
-              <div class="u-align-center u-container-style u-grey-5 u-layout-cell u-left-cell u-size-20 u-layout-cell-1">
-                <div class="u-container-layout u-valign-middle u-container-layout-1">
-                  <h2 class="u-text u-text-1">Our Food</h2>
-                  <div class="u-border-5 u-border-palette-1-base u-line u-line-horizontal u-line-1"></div>
-                  <p class="u-text u-text-2" th:text="${text3}">Text 3</p>
-                </div>
-              </div>
-              <div class="u-container-style u-image u-layout-cell u-right-cell u-size-40 u-image-1" data-image-width="1920" data-image-height="1080">
-                <div class="u-container-layout"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="u-clearfix u-palette-2-base u-section-5" id="sec-2ae0">
-      <div class="u-clearfix u-image u-sheet u-image-1" data-image-width="1920" data-image-height="1282"></div>
-    </section>
-    <section class="u-clearfix u-palette-2-base u-section-6" id="sec-b562">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
-          <div class="u-gutter-0 u-layout">
-            <div class="u-layout-row">
-              <div class="u-align-center-sm u-container-style u-grey-5 u-layout-cell u-left-cell u-size-30 u-layout-cell-1">
-                <div class="u-container-layout u-valign-middle">
-                  <img th:src="@{images/logo_500x500.png}" src="../static/images/logo_500x500.png" alt="" class="u-image u-image-contain u-image-default u-image-1" data-image-width="147" data-image-height="163">
-                </div>
-              </div>
-              <div class="u-align-center-sm u-align-center-xs u-container-style u-grey-5 u-layout-cell u-right-cell u-size-30 u-layout-cell-2">
-                <div class="u-container-layout u-valign-middle-sm u-valign-middle-xs">
-                  <div class="u-social-icons u-spacing-10 u-social-icons-1">
-                    <a class="u-social-url" target="_blank" href=""><span class="u-icon u-icon-circle u-social-facebook u-social-icon u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112.2 112.2"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-ad8c"></use></svg><svg x="0px" y="0px" viewBox="0 0 112.2 112.2" enable-background="new 0 0 112.2 112.2" xml:space="preserve" id="svg-ad8c" class="u-svg-content"><path d="M75.5,28.8H65.4c-1.5,0-4,0.9-4,4.3v9.4h13.9l-1.5,15.8H61.4v45.1H42.8V58.3h-8.8V42.4h8.8V32.2 c0-7.4,3.4-18.8,18.8-18.8h13.8v15.4H75.5z"></path></svg></span>
-                    </a>
-                    <a class="u-social-url" target="_blank" href=""><span class="u-icon u-icon-circle u-social-icon u-social-twitter u-icon-2"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112.2 112.2"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-32c3"></use></svg><svg x="0px" y="0px" viewBox="0 0 112.2 112.2" enable-background="new 0 0 112.2 112.2" xml:space="preserve" id="svg-32c3" class="u-svg-content"><path d="M92.2,38.2c0,0.8,0,1.6,0,2.3c0,24.3-18.6,52.4-52.6,52.4c-10.6,0.1-20.2-2.9-28.5-8.2 c1.4,0.2,2.9,0.2,4.4,0.2c8.7,0,16.7-2.9,23-7.9c-8.1-0.2-14.9-5.5-17.3-12.8c1.1,0.2,2.4,0.2,3.4,0.2c1.6,0,3.3-0.2,4.8-0.7 c-8.4-1.6-14.9-9.2-14.9-18c0-0.2,0-0.2,0-0.2c2.5,1.4,5.4,2.2,8.4,2.3c-5-3.3-8.3-8.9-8.3-15.4c0-3.4,1-6.5,2.5-9.2 c9.1,11.1,22.7,18.5,38,19.2c-0.2-1.4-0.4-2.8-0.4-4.3c0.1-10,8.3-18.2,18.5-18.2c5.4,0,10.1,2.2,13.5,5.7c4.3-0.8,8.1-2.3,11.7-4.5 c-1.4,4.3-4.3,7.9-8.1,10.1c3.7-0.4,7.3-1.4,10.6-2.9C98.9,32.3,95.7,35.5,92.2,38.2z"></path></svg></span>
-                    </a>
-                    <a class="u-social-url" target="_blank" href="https://www.instagram.com/vitalik_skr"><span class="u-icon u-icon-circle u-social-icon u-social-instagram u-icon-3"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112.2 112.2"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-8478"></use></svg><svg x="0px" y="0px" viewBox="0 0 112.2 112.2" enable-background="new 0 0 112.2 112.2" xml:space="preserve" id="svg-8478" class="u-svg-content"><path d="M55.9,32.9c-12.8,0-23.2,10.4-23.2,23.2s10.4,23.2,23.2,23.2s23.2-10.4,23.2-23.2S68.7,32.9,55.9,32.9z M55.9,69.4c-7.4,0-13.3-6-13.3-13.3c-0.1-7.4,6-13.3,13.3-13.3s13.3,6,13.3,13.3C69.3,63.5,63.3,69.4,55.9,69.4z"></path><path d="M79.7,26.8c-3,0-5.4,2.5-5.4,5.4s2.5,5.4,5.4,5.4c3,0,5.4-2.5,5.4-5.4S82.7,26.8,79.7,26.8z"></path><path d="M78.2,11H33.5C21,11,10.8,21.3,10.8,33.7v44.7c0,12.6,10.2,22.8,22.7,22.8h44.7c12.6,0,22.7-10.2,22.7-22.7 V33.7C100.8,21.1,90.6,11,78.2,11z M91,78.4c0,7.1-5.8,12.8-12.8,12.8H33.5c-7.1,0-12.8-5.8-12.8-12.8V33.7 c0-7.1,5.8-12.8,12.8-12.8h44.7c7.1,0,12.8,5.8,12.8,12.8V78.4z"></path></svg></span>
-                    </a>
-                    <a class="u-social-url" target="_blank" href=""><span class="u-icon u-icon-circle u-social-icon u-social-linkedin u-icon-4"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112.2 112.2"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-55a5"></use></svg><svg x="0px" y="0px" viewBox="0 0 112.2 112.2" enable-background="new 0 0 112.2 112.2" xml:space="preserve" id="svg-55a5" class="u-svg-content"><path d="M33.8,96.8H14.5v-58h19.3V96.8z M24.1,30.9L24.1,30.9c-6.6,0-10.8-4.5-10.8-10.1c0-5.8,4.3-10.1,10.9-10.1 S34.9,15,35.1,20.8C35.1,26.4,30.8,30.9,24.1,30.9z M103.3,96.8H84.1v-31c0-7.8-2.7-13.1-9.8-13.1c-5.3,0-8.5,3.6-9.9,7.1 c-0.6,1.3-0.6,3-0.6,4.8V97H44.5c0,0,0.3-52.6,0-58h19.3v8.2c2.6-3.9,7.2-9.6,17.4-9.6c12.7,0,22.2,8.4,22.2,26.1V96.8z"></path></svg></span>
-                    </a>
-                    <a class="u-social-url" target="_blank" href=""><span class="u-icon u-icon-circle u-social-icon u-social-youtube u-icon-5"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112.2 112.2"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-b654"></use></svg><svg x="0px" y="0px" viewBox="0 0 112.2 112.2" enable-background="new 0 0 112.2 112.2" xml:space="preserve" id="svg-b654" class="u-svg-content"><path d="M82.3,24H29.7C19.3,24,11,32.5,11,43v26.7c0,10.5,8.3,19,18.7,19h52.5c10.3,0,18.7-8.5,18.7-19V43 C101,32.5,92.7,24,82.3,24L82.3,24z M69.7,57.6L45.1,69.5c-0.7,0.2-1.4-0.2-1.4-0.8V44.1c0-0.7,0.8-1.3,1.4-0.8l24.6,12.6 C70.4,56.2,70.4,57.3,69.7,57.6L69.7,57.6z"></path></svg></span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="u-border-6 u-border-palette-1-base u-expanded-width u-line u-line-horizontal u-line-1"></div>
-      </div>
-    </section>
-  </body>
+            
+            <div class="footer-line"></div>
+
+			<div class="licence-block">
+				<h1>@The open source project</h1>
+			</div>
+		</footer>
+	</div>
+</body>
 </html>

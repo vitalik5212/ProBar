@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<title>Main</title>
+	<link rel="stylesheet" type="text/css" th:href="@{css/main.css}" href="main.css">
+	<link rel="stylesheet" type="text/css" th:href="@{css/main.css}" href="main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!--    header-->
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<div class="page">
+		<header>
+			<div class="logo">
+				<a th:href="@{/}" href="index.html">
+					<img th:src="@{images/default-logo.png}" src="images/default-logo.png">
+				</a>
+			</div>
+
+		<!-- 	<div th:if="!null" class="block-top-auth-profil">
+				<p><a href="#">Reg</a></p>
+				<p><a href="#">Sing in</a></p>
+			</div> -->
+
+			<div class="block-top-auth">
+				<p><a href="#">Reg</a></p>
+				<p><a href="#">Sing in</a></p>
+			</div>
+
+			<div class="top-menu">
+				<ul>
+					<li><a th:href="@{/}" href="index.html">Main</a></li>
+					<li><a th:href="@{/alcohol}" href="alcohol.html">Alkohol</a></li>
+					<li><a th:href="@{/cocktails}" href="cocktails.html">Cocktails</a></li>
+				</ul>
+			</div>
+		</header>
+        <main>
+
+        </main>
+		<footer>
+			<div class="contacts-block">
+				<ul>
+					<li>
+						<a href="https://www.instagram.com/vitalik_skr" target="_blank"><img th:src="@{images/icons/instagram-icon.png}" src="../static/images/icons/instagram-icon.png"></a>
+					</li>
+					<li>
+						<a href="https://t.me/vitalik_skr" target="_blank"><img th:src="@{images/icons/telegram-icon.png}" src="../static/images/icons/telegram-icon.png"></a>
+					</li>
+					<li>
+						<a href="https://www.linkedin.com/in/vitalik-skr-6844981bb/" target="_blank"><img th:src="@{images/icons/linkedin-icon.png}" src="../static/images/icons/linkedin-icon.png"></a>
+					</li>
+					<li>
+						<a href="https://github.com/vitalik5212/ProBar" target="_blank"><img th:src="@{images/icons/github-icon.png}" src="../static/images/icons/github-icon.png"></a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="licence-block">
+				<h1>@The open source project</h1>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>
