@@ -3,6 +3,11 @@
 	padding: 0;
 }
 
+main {
+    width: 1035px;
+    margin: 0 auto 0 auto;
+}
+
 body {
 	background-color: #2f2f2f;
 	color: #b2b2b2;

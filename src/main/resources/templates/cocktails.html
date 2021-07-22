@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" lang="en">
 <head>
 	<meta charset="utf-8">
 	<title>Cocktails</title>
@@ -16,30 +16,30 @@
 <body>
 	<div class="page">
         <header>
-            <div class="logo">
-                <a th:href="@{/}" href="index.html">
-                    <img th:src="@{images/default-logo.png}" src="../static/images/default-logo.png">
-                </a>
-            </div>
+			<div class="logo">
+				<a th:href="@{/}" href="index.html">
+					<img th:src="@{images/default-logo.png}" src="../static/images/default-logo.png">
+				</a>
+			</div>
 
-            <!-- 	<div th:if="!null" class="block-top-auth-profil">
-                    <p><a href="#">Reg</a></p>
-                    <p><a href="#">Sing in</a></p>
-                </div> -->
+			<div sec:authorize="isAuthenticated()" class="block-top-auth">
+				<p>Hello <a href="#" sec:authentication="name">name</a></p>
+				<p><a href="#">Sing out</a></p>
+			</div>
 
-            <div class="block-top-auth">
-                <p><a href="#">Reg</a></p>
-                <p><a href="#">Sing in</a></p>
-            </div>
+			<div sec:authorize="!isAuthenticated()" class="block-top-auth">
+				<p><a href="#">Reg</a></p>
+				<p><a href="#">Sing in</a></p>
+			</div>
 
-            <div class="top-menu">
-                <ul>
-                    <li><a th:href="@{/}" href="index.html">Main</a></li>
-                    <li><a th:href="@{/alcohol}" href="alcohol.html">Alkohol</a></li>
-                    <li><a th:href="@{/cocktails}" href="cocktails.html">Cocktails</a></li>
-                </ul>
-            </div>
-        </header>
+			<div class="top-menu">
+				<ul>
+					<li><a th:href="@{/}" href="index.html">Main</a></li>
+					<li><a th:href="@{/alcohol}" href="alcohol.html">Alkohol</a></li>
+					<li><a th:href="@{/cocktails}" href="cocktails.html">Cocktails</a></li>
+				</ul>
+			</div>
+		</header>
         <main>
 <!--            At deveopment           -->
             <div class="top-container">
@@ -48,7 +48,7 @@
             
             <div class="main-container">
                 <div th:each="cocktail : ${cocktails}" class="cocktail">
-                    <a href="#" class="link-img"><img th:src="${cocktail.getImage()}"></a>
+                    <a th:href="@{/cocktail/{id}(id = ${cocktail.getId()})}" class="link-img"><img th:src="${cocktail.getImage()}"></a>
                     <div class="cocktail-content">
                         <span class="category-date">
                             <h5>01.01.2001</h5>

@@ -1,0 +1,81 @@
+.first-block {
+    margin: 35px;
+    display: flex;
+    position: relative;
+    height: 350px;
+}
+
+.name_cocktail {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.main-img {
+    width: 350px;
+    margin: 0 auto 0 auto;
+    border: solid 1px grey;
+}
+
+.main-img img {
+    width: inherit;
+    height: inherit;
+}
+
+.short-info {
+    margin: 25px auto 25px auto;
+    width: 350px;
+}
+
+.short-text {
+    height: 20px;
+}
+
+#text-1 {
+    float: left;
+}
+
+#text-2 {
+    float: right;
+}
+
+.line {
+    margin: 3px 0 3px 0;
+    height: 1px;
+    background-color: grey;
+}
+
+.info-block {
+    margin: 50px 35px;
+}
+
+.info-block h3 {
+    text-align: center;
+}
+
+.ingredients-block {
+    margin: 0 35px;
+}
+
+.ingredients-text {
+    width: 500px;
+    height: 32px;
+}
+
+#text-3 {
+    float: left;
+}
+
+#text-4 {
+    float: right;
+}
+
+.line-2 {
+    margin: 3px 0 3px 0;
+    height: 1px;
+    width: 500px;
+    background-color: grey;
+}
+
+.end-block {
+    
+}

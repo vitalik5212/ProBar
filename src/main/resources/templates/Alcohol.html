@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" lang="en">
 <head>
 	<meta charset="utf-8">
 	<title>Alcohol</title>
@@ -21,12 +21,12 @@
 				</a>
 			</div>
 
-		<!-- 	<div th:if="!null" class="block-top-auth-profil">
-				<p><a href="#">Reg</a></p>
-				<p><a href="#">Sing in</a></p>
-			</div> -->
+			<div sec:authorize="isAuthenticated()" class="block-top-auth">
+				<p>Hello <a href="#" sec:authentication="name">name</a></p>
+				<p><a href="#">Sing out</a></p>
+			</div>
 
-			<div class="block-top-auth">
+			<div sec:authorize="!isAuthenticated()" class="block-top-auth">
 				<p><a href="#">Reg</a></p>
 				<p><a href="#">Sing in</a></p>
 			</div>

@@ -6,6 +6,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Optional;
@@ -20,7 +21,7 @@ public class CocktailController {
     }
 
     @GetMapping("/cocktails")
-    public String cocktailPage(Model model,
+    public String cocktails (Model model,
                                   @RequestParam("page") Optional<Integer> page,
                                   @RequestParam("size") Optional<Integer> size) {
         int pageNumber = page.orElse(1);
@@ -32,5 +33,12 @@ public class CocktailController {
         model.addAttribute("currentPage", pageNumber);
         model.addAttribute("amountPages", cocktails.getTotalPages());
         return "cocktails";
+    }
+
+    @GetMapping("/cocktail/{id}")
+    public String cocktail (Model model,
+                            @PathVariable Long id) {
+        model.addAttribute("cocktail", cocktailService.getObjectById(id));
+        return "cocktail";
     }
 }

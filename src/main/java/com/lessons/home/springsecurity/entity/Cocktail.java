@@ -58,5 +58,12 @@ public class Cocktail implements Product, Serializable {
         }
         return FileCopier.copy(image);
     }
+
+    public Set<Drink> getAllIngredients() {
+        Set<Drink> allIngredients = new HashSet<>();
+        allIngredients.addAll(ingredients);
+        allIngredients.addAll(drinks);
+        return allIngredients;
+    }
 }
 

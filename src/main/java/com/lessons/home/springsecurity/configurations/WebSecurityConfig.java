@@ -46,13 +46,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     .antMatchers("/new").hasAnyAuthority("ADMIN", "EDITOR")
                     .antMatchers("/edit/**").hasAnyAuthority("ADMIN", "EDITOR")
                     .antMatchers("/delete/**").hasAuthority("ADMIN")
-                    .anyRequest().authenticated()
-                .and()
-                    .formLogin().permitAll()//.formLogin().loginPage("/login").permitAll()
-                .and()
-                    .logout().permitAll()
-                .and()
-                    .exceptionHandling().accessDeniedPage("/403")
+//                    .anyRequest().authenticated()
+//                .and()
+//                    .formLogin().permitAll()//.formLogin().loginPage("/login").permitAll()
+//                .and()
+//                    .logout().permitAll()
+//                .and()
+//                    .exceptionHandling().accessDeniedPage("/403")
         ;
     }
 }

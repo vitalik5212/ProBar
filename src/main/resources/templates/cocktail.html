@@ -2,9 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
 	<meta charset="utf-8">
-	<title>Main</title>
+	<title>Cocktail page</title>
 	<link rel="stylesheet" type="text/css" th:href="@{css/main.css}" href="../static/css/main.css">
-<!--	<link rel="stylesheet" type="text/css" th:href="@{css/main.css}" href="main.css">-->
+	<link rel="stylesheet" type="text/css" th:href="@{css/cocktail.css}" href="../static/css/cocktail.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <!--    header-->
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
@@ -38,7 +38,32 @@
 			</div>
 		</header>
         <main>
-            <h1>Main Page</h1>
+            <h1 th:text="${cocktail.getName()}" class="name_cocktail">Name</h1>
+            <div class="first-block">
+                <div class="main-img">
+                    <img src="#" th:src="${cocktail.getImage()}">
+                </div>
+                <div class="short-info">
+                    <div class="short-text">
+                        <h3 id="text-1">left</h3>
+                        <h3 id="text-2">right</h3>
+                    </div>
+                    <div class="line"></div>
+                </div>
+            </div>
+            <div class="info-block">
+                <h3 th:text="${cocktail.getInfo()}">some info</h3>
+            </div>
+            <div class="ingredients-block" th:each="ingredient : ${cocktail.getAllIngredients()}">
+                    <div class="ingredients-text">
+                        <h3 th:text="${ingredient.getName()}" id="text-3">ingredient</h3>
+                        <h3 id="text-4">0 ml</h3>
+                    </div>
+                    <div class="line-2"></div>
+            </div>
+            <div class="end-block">
+            
+            </div>
         </main>
 		<footer>
 			<div class="contacts-block">
