@@ -1,6 +1,6 @@
 package com.lessons.home.springsecurity.configurations;
 
-import com.lessons.home.springsecurity.users.UserDetailsServiceImpl;
+import com.lessons.home.springsecurity.services.UserService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -17,7 +17,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public UserDetailsService userDetailsService() {
-        return new UserDetailsServiceImpl();
+        return new UserService();
     }
 
     @Bean
@@ -42,17 +42,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                    .antMatchers("/").hasAnyAuthority("USER", "EDITOR", "ADMIN")
-                    .antMatchers("/new").hasAnyAuthority("ADMIN", "EDITOR")
-                    .antMatchers("/edit/**").hasAnyAuthority("ADMIN", "EDITOR")
-                    .antMatchers("/delete/**").hasAuthority("ADMIN")
-//                    .anyRequest().authenticated()
-//                .and()
-//                    .formLogin().permitAll()//.formLogin().loginPage("/login").permitAll()
-//                .and()
-//                    .logout().permitAll()
-//                .and()
-//                    .exceptionHandling().accessDeniedPage("/403")
+            .antMatchers("/").permitAll()
+            .antMatchers("/new").hasAnyAuthority("ADMIN", "EDITOR")
+            .antMatchers("/edit/**").hasAnyAuthority("ADMIN", "EDITOR")
+            .antMatchers("/admin/**").hasAuthority("ADMIN")
+            .anyRequest().permitAll()
+        .and()
+            .formLogin().permitAll()
+        .and()
+            .logout().permitAll()
+        .and()
+            .exceptionHandling().accessDeniedPage("/403")
         ;
     }
 }
