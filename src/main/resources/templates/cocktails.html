@@ -22,15 +22,15 @@
 				</a>
 			</div>
 
-			<div sec:authorize="isAuthenticated()" class="block-top-auth">
-				<p>Hello <a href="#" sec:authentication="name">name</a></p>
-				<p><a href="#">Sing out</a></p>
-			</div>
+            <div sec:authorize="isAuthenticated()" class="block-top-auth">
+                <p>Hello <a href="#" sec:authentication="name">name</a></p>
+                <p><a th:href="@{/logout}">Sing out</a></p>
+            </div>
 
-			<div sec:authorize="!isAuthenticated()" class="block-top-auth">
-				<p><a href="#">Reg</a></p>
-				<p><a href="#">Sing in</a></p>
-			</div>
+            <div sec:authorize="!isAuthenticated()" class="block-top-auth">
+                <p><a th:href="@{/registration}">Reg</a></p>
+                <p><a th:href="@{/login}">Sing in</a></p>
+            </div>
 
 			<div class="top-menu">
 				<ul>

@@ -1,0 +1,41 @@
+form {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid orange;
+    border-radius: 5px;
+    margin: 30px 80px;
+}
+
+.form-header {
+    height: auto;
+    margin: 25px;
+}
+
+.form-header h1 {
+    text-align: center;
+}
+
+.column-form {
+    margin: 20px 35px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-control {
+    font-size: 15px;
+    height: 27px;
+    width: 350px;
+    border-radius: 5px;
+    padding: 3px 6px;;
+}
+
+.button-submit {
+    margin: 20px auto;
+    height: 30px;
+    width: 120px;
+    border: 2px solid orange;
+    border-radius: 4px;
+    background-color: inherit;
+    color: orange;
+    cursor: pointer;
+}

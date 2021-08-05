@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>Regestration</title>
 	<link rel="stylesheet" type="text/css" th:href="@{css/main.css}" href="../../static/css/main.css">
-	<link rel="stylesheet" type="text/css" th:href="@{css/user/registration.css}" href="../../static/css/user/regestration.css">
+	<link rel="stylesheet" type="text/css" th:href="@{css/user/registration.css}" href="../../static/css/user/registration.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <!--    header-->
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
@@ -21,12 +21,12 @@
 
 			<div sec:authorize="isAuthenticated()" class="block-top-auth">
 				<p>Hello <a href="#" sec:authentication="name">name</a></p>
-				<p><a href="#">Sing out</a></p>
+				<p><a th:href="@{/logout}">Sing out</a></p>
 			</div>
 
 			<div sec:authorize="!isAuthenticated()" class="block-top-auth">
-				<p><a href="#">Reg</a></p>
-				<p><a href="#">Sing in</a></p>
+				<p><a th:href="@{/registration}">Reg</a></p>
+				<p><a th:href="@{/login}">Sing in</a></p>
 			</div>
 
 			<div class="top-menu">
@@ -38,7 +38,31 @@
 			</div>
 		</header>
         <main>
-            <h1>Registration form</h1>
+            <form th:action="@{/registration}" th:object="${user}" method="post">
+                <div class="form-header">
+                    <h1>Registration</h1>
+                </div>
+                <div class="column-form">
+                    <label>Username</label>
+                    <input type="text" class="form-control" th:field="*{username}">
+                </div>
+                
+                <div class="column-form">
+                    <label>Email</label>
+                    <input type="text" class="form-control" th:field="*{email}">
+                </div>
+                
+                <div class="column-form">
+                    <label>Password</label>
+                    <input type="password" class="form-control" th:field="*{password}">
+                </div>
+                
+                <div class="column-form">
+                    <label>Confirm password</label>
+                    <input type="password" class="form-control">
+                </div>
+                <button type="submit" class="button-submit">Confirm</button>
+            </form>
         </main>
 		<footer>
 			<div class="contacts-block">
