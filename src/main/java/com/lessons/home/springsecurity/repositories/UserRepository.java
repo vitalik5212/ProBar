@@ -1,5 +1,6 @@
-package com.lessons.home.springsecurity.users;
+package com.lessons.home.springsecurity.repositories;
 
+import com.lessons.home.springsecurity.entity.user.User;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;

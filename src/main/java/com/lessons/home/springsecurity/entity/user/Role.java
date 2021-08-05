@@ -1,4 +1,4 @@
-package com.lessons.home.springsecurity.users;
+package com.lessons.home.springsecurity.entity.user;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

@@ -1,8 +1,10 @@
-package com.lessons.home.springsecurity.users;
+package com.lessons.home.springsecurity.entity.user;
 
+import com.lessons.home.springsecurity.entity.user.Role;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -37,4 +39,8 @@ public class User {
     )
     private Set<Role> roles = new HashSet<>();
 
+    public String encodePassword(String password) {
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        return encoder.encode(password);
+    }
 }

@@ -1,5 +1,7 @@
-package com.lessons.home.springsecurity.users;
+package com.lessons.home.springsecurity.entity.user;
 
+import com.lessons.home.springsecurity.entity.user.Role;
+import com.lessons.home.springsecurity.entity.user.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
