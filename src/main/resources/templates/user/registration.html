@@ -38,30 +38,33 @@
 			</div>
 		</header>
         <main>
-            <form th:action="@{/registration}" th:object="${user}" method="post">
+            <form th:action="@{/registration}" th:object="${user}" method="post" th:method="post">
                 <div class="form-header">
                     <h1>Registration</h1>
                 </div>
                 <div class="column-form">
                     <label>Username</label>
                     <input type="text" class="form-control" th:field="*{username}">
+					<div style="color: red" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">error</div>
                 </div>
                 
                 <div class="column-form">
                     <label>Email</label>
                     <input type="text" class="form-control" th:field="*{email}">
+					<div style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">error</div>
                 </div>
                 
                 <div class="column-form">
                     <label>Password</label>
                     <input type="password" class="form-control" th:field="*{password}">
+					<div style="color: red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">error</div>
                 </div>
                 
                 <div class="column-form">
                     <label>Confirm password</label>
                     <input type="password" class="form-control">
                 </div>
-                <button type="submit" class="button-submit">Confirm</button>
+                <button type="submit" class="button-submit" value="registration">Confirm</button>
             </form>
         </main>
 		<footer>

@@ -1,12 +1,14 @@
 package com.lessons.home.springsecurity.entity.user;
 
-import com.lessons.home.springsecurity.entity.user.Role;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -26,8 +28,16 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @NotBlank(message = "Email cannot be empty")
+    @Email(message = "Wrong format for email")
     private String email;
+
+    @Size(min = 6, max = 32, message = "Wrong format, the name range is from 6 to 32")
+    @NotBlank(message = "Username cannot be empty")
     private String username;
+
+    @Size(min = 6, max = 32, message = "Wrong format, the password range is from 6 to 32")
+    @NotBlank(message = "Password cannot be empty")
     private String password;
     private boolean enabled;
 
