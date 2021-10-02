@@ -34,7 +34,6 @@ public class RegistrationController {
             return "user/registration";
         }
         if(bindingResult.hasErrors()) {
-            System.out.println("Ex");
             return "user/registration";
         }
 

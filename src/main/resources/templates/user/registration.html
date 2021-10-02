@@ -38,7 +38,7 @@
 			</div>
 		</header>
         <main>
-            <form th:action="@{/registration}" th:object="${user}" method="post" th:method="post">
+            <form th:action="@{/registration}" th:object="${user}" th:method="POST">
                 <div class="form-header">
                     <h1>Registration</h1>
                 </div>
@@ -64,7 +64,7 @@
                     <label>Confirm password</label>
                     <input type="password" class="form-control">
                 </div>
-                <button type="submit" class="button-submit" value="registration">Confirm</button>
+                <button type="submit" class="button-submit" value="Create!">Confirm</button>
             </form>
         </main>
 		<footer>

@@ -23,10 +23,6 @@ public class UserService implements UserDetailsService {
             throws UsernameNotFoundException {
        User user = userRepository.getUserByUsername(username);
 
-       if (user == null) {
-           throw new UsernameNotFoundException("Could not find user");
-       }
-
        return new MyUserDetails(user);
     }
 
