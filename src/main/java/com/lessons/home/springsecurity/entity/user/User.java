@@ -36,7 +36,7 @@ public class User {
     @NotBlank(message = "Username cannot be empty")
     private String username;
 
-    @Size(min = 6, max = 32, message = "Wrong format, the password range is from 6 to 32")
+    @Size(min = 6, max = 64, message = "Wrong format, the password range is from 6 to 64")
     @NotBlank(message = "Password cannot be empty")
     private String password;
     private boolean enabled;

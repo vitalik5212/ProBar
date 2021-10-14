@@ -27,9 +27,8 @@ public class RegistrationController {
 
     @PostMapping("/registration")
     public String create(@ModelAttribute("user") @Valid User user,
-                         BindingResult bindingResult,
-                         Model model) {
-        if(userService.loadUserByUsername(user.getUsername()) != null) {
+                         BindingResult bindingResult) {
+        if(userService.findUserByUsername(user.getUsername()) != null) {
             bindingResult.addError(new FieldError("user", "username", "This username already exists"));
             return "user/registration";
         }

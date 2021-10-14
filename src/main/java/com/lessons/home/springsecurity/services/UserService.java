@@ -7,7 +7,6 @@ import com.lessons.home.springsecurity.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
@@ -23,6 +22,10 @@ public class UserService implements UserDetailsService {
        User user = userRepository.getUserByUsername(username);
 
        return new MyUserDetails(user);
+    }
+
+    public User findUserByUsername(String username) {
+        return userRepository.getUserByUsername(username);
     }
 
     public void create(User user, Role role) {

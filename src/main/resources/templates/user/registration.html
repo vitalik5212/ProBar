@@ -2,9 +2,10 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
 	<meta charset="utf-8">
-	<title>Regestration</title>
+	<title>Registration</title>
 	<link rel="stylesheet" type="text/css" th:href="@{css/main.css}" href="../../static/css/main.css">
 	<link rel="stylesheet" type="text/css" th:href="@{css/user/registration.css}" href="../../static/css/user/registration.css">
+	<script src="../../static/js/user/validator.js" th:src="@{js/user/validator.js}"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <!--    header-->
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
@@ -38,7 +39,7 @@
 			</div>
 		</header>
         <main>
-            <form th:action="@{/registration}" th:object="${user}" th:method="POST">
+            <form th:action="@{/registration}" th:object="${user}" th:method="POST" onchange="validate()">
                 <div class="form-header">
                     <h1>Registration</h1>
                 </div>
@@ -53,18 +54,19 @@
                     <input type="text" class="form-control" th:field="*{email}">
 					<div style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">error</div>
                 </div>
-                
+
                 <div class="column-form">
                     <label>Password</label>
-                    <input type="password" class="form-control" th:field="*{password}">
+                    <input type="password" id="password" class="form-control" th:field="*{password}">
 					<div style="color: red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">error</div>
                 </div>
                 
-                <div class="column-form">
+                <div class="column-form" onchange="comparePassword()">
                     <label>Confirm password</label>
-                    <input type="password" class="form-control">
+                    <input type="password" id="repass" class="form-control">
+					<div style="color: red" id="password_error"></div>
                 </div>
-                <button type="submit" class="button-submit" value="Create!">Confirm</button>
+                <button type="submit" id="submit" class="button-submit" value="Create!">Confirm</button>
             </form>
         </main>
 		<footer>
