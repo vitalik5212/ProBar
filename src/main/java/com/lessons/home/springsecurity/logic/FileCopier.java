@@ -48,6 +48,6 @@ public class FileCopier {
             ex.printStackTrace();
         }
 
-        return "temp_images\\" + to.getName();
+        return "/temp_images\\" + to.getName();
     }
 }
