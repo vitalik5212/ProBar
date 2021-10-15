@@ -18,15 +18,12 @@ public class FileCopier {
 
     /**
      * Method for copies files
-     * @param fileName
      * @return path copied temp file
      */
     public static String copy(String fileName) {
 
         File from = new File(resources + fileName);
         File to = new File(tempFiles + "\\" + fileName);
-        InputStream is = null;
-        OutputStream os = null;
 
         try {
             to.createNewFile();
@@ -34,16 +31,14 @@ public class FileCopier {
             e.printStackTrace();
         }
 
-        try {
-            is = new FileInputStream(from);
-            os = new FileOutputStream(to);
+        try (InputStream is = new FileInputStream(from);
+             OutputStream os = new FileOutputStream(to)) {
+
             byte[] buffer = new byte[1024];
             int length;
             while ((length = is.read(buffer)) > 0) {
                 os.write(buffer, 0, length);
             }
-            is.close();
-            os.close();
         } catch (Exception ex) {
             ex.printStackTrace();
         }
