@@ -1,7 +1,5 @@
 package com.lessons.home.springsecurity.entity.user;
 
-import com.lessons.home.springsecurity.entity.user.Role;
-import com.lessons.home.springsecurity.entity.user.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -25,7 +23,7 @@ public class MyUserDetails implements UserDetails {
         Set<Role> roles = user.getRoles();
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
 
-        for(Role role : roles) {
+        for (Role role : roles) {
             authorities.add(new SimpleGrantedAuthority(role.getName()));
         }
 
@@ -60,5 +58,9 @@ public class MyUserDetails implements UserDetails {
     @Override
     public boolean isEnabled() {
         return user.isEnabled();
+    }
+
+    public void setEnable(boolean enable) {
+        user.setEnabled(enable);
     }
 }

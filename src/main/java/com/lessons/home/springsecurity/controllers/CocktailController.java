@@ -35,7 +35,6 @@ public class CocktailController {
         return "cocktails";
     }
 
-
     @GetMapping("/cocktail/{id}")
     public String cocktail (Model model,
                             @PathVariable Long id) {

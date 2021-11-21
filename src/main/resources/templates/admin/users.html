@@ -1,67 +1,119 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
-	<meta charset="utf-8">
-	<title>Admin</title>
-	<link rel="stylesheet" type="text/css" th:href="@{css/main.css}" href="/../../static/css/main.css">
-	<link rel="stylesheet" type="text/css" th:href="@{css/admin.admin.css}" href="../../static/css/admin/admin.css">
+    <meta charset="utf-8">
+    <title>Admin</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" href="../../static/css/Main.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/admin/users.css}" href="../../static/css/admin/users.css">
+    <script src="../../static/js/admin/users.js" th:src="@{/js/admin/users.js}"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <!--    header-->
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-	<div class="page">
-		<header>
-			<div class="logo">
-				<a th:href="@{/}" href="index.html">
-					<img th:src="@{images/default-logo.png}" src="../static/images/default-logo.png">
-				</a>
-			</div>
+<div class="page">
+    <header>
+        <div class="logo">
+            <a th:href="@{/}" href="/">
+                <img th:src="@{/images/default-logo.png}" src="../../static/images/default-logo.png">
+            </a>
+        </div>
 
-			<div sec:authorize="isAuthenticated()" class="block-top-auth">
-				<p>Hello <a href="#" sec:authentication="name">name</a></p>
-				<p><a th:href="@{/logout}">Sing out</a></p>
-			</div>
+        <div sec:authorize="isAuthenticated()" class="block-top-auth">
+            <p>Hello <a href="#" sec:authentication="name">name</a></p>
+            <p><a th:href="@{/logout}">Sing out</a></p>
+        </div>
 
-			<div sec:authorize="!isAuthenticated()" class="block-top-auth">
-				<p><a th:href="@{/registration}">Reg</a></p>
-				<p><a th:href="@{/login}">Sing in</a></p>
-			</div>
+        <div sec:authorize="!isAuthenticated()" class="block-top-auth">
+            <p><a th:href="@{/registration}">Reg</a></p>
+            <p><a th:href="@{/login}">Sing in</a></p>
+        </div>
 
-			<div class="top-menu">
-				<ul>
-					<li><a th:href="@{/}" href="index.html">Main</a></li>
-					<li><a th:href="@{/alcohol}" href="alcohol.html">Alkohol</a></li>
-					<li><a th:href="@{/cocktails}" href="cocktails.html">Cocktails</a></li>
-				</ul>
-			</div>
-		</header>
-        <main>
-            <h1>Admin page</h1>
-        </main>
-		<footer>
-			<div class="contacts-block">
-				<ul>
-					<li>
-						<a href="https://www.instagram.com/vitalik_skr" target="_blank"><img th:src="@{images/icons/instagram-icon.png}" src="../static/images/icons/instagram-icon.png"></a>
-					</li>
-					<li>
-						<a href="https://t.me/vitalik_skr" target="_blank"><img th:src="@{images/icons/telegram-icon.png}" src="../static/images/icons/telegram-icon.png"></a>
-					</li>
-					<li>
-						<a href="https://www.linkedin.com/in/vitalik-skr-6844981bb/" target="_blank"><img th:src="@{images/icons/linkedin-icon.png}" src="../static/images/icons/linkedin-icon.png"></a>
-					</li>
-					<li>
-						<a href="https://github.com/vitalik5212/ProBar" target="_blank"><img th:src="@{images/icons/github-icon.png}" src="../static/images/icons/github-icon.png"></a>
-					</li>
-				</ul>
-			</div>
+        <div class="top-menu">
+            <ul>
+                <li><a th:href="@{/}" href="/">Main</a></li>
+                <li><a th:href="@{/alcohol}" href="alcohol.html">Alkohol</a></li>
+                <li><a th:href="@{/cocktails}" href="cocktails.html">Cocktails</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div class="users">
+            <table class="user-table">
+                <tr>
+                    <td class="title">ID</td>
+                    <td class="title">Username</td>
+                    <td class="title">Email</td>
+                    <td class="title">Roles</td>
+                </tr>
+                <tr th:each="user : ${users}">
+                    <td th:text="${user.getId()}"></td>
+                    <td th:text="${user.getUsername()}"></td>
+                    <td th:text="${user.getEmail()}"></td>
+                    <td>Roles</td>
+                    <td>
+                        <form action="/usersSave" method="post">
+                            <!--                            <butt>Change role</butt>-->
+                            <!--                            <button onclick="ban()" th:if="${user.isEnabled() == true} "-->
+                            <label>
+                                <input type="checkbox">Ban
+                            </label>
+                            <!--                            <button onclick="unban()" th:if="${user.isEnabled() == false}"-->
+                            <!--                            th:action="@{'admin/users/ban?id=' + ${user.getId()}}" method="get">Unban-->
+                            <!--                            </button>-->
+                            <!--                            <p id="warn" th:if="${user.isEnabled() == false}">Baned-->
+                            <!--                            <p/>-->
+                            <button type="submit">Submit</button>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+            <div class="nav-panel">
+                <div class="buttoms">
+                    <a th:if="${currentPage > 1}" th:href="@{'/admin/users?page=' + ${currentPage - 1}}">
+                        <button class="buttom-nav">previous</button>
+                    </a>
+                    <a th:if="${currentPage < amountPages}" th:href="@{'/admin/users?page=' + ${currentPage + 1}}">
+                        <button class="buttom-nav">next</button>
+                    </a>
+                </div>
+                <div class="pages">
+                    <a>Total Pages : </a>
+                    <a th:text="${amountPages}">null</a>
+                    <a>; Current Page : </a>
+                    <a th:text="${currentPage}">null</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="contacts-block">
+            <ul>
+                <li>
+                    <a href="https://www.instagram.com/vitalik_skr" target="_blank"><img
+                            th:src="@{/images/icons/instagram-icon.png}"
+                            src="../static/images/icons/instagram-icon.png"></a>
+                </li>
+                <li>
+                    <a href="https://t.me/vitalik_skr" target="_blank"><img th:src="@{/images/icons/telegram-icon.png}"
+                                                                            src="../static/images/icons/telegram-icon.png"></a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/vitalik-skr-6844981bb/" target="_blank"><img
+                            th:src="@{/images/icons/linkedin-icon.png}" src="../static/images/icons/linkedin-icon.png"></a>
+                </li>
+                <li>
+                    <a href="https://github.com/vitalik5212/ProBar" target="_blank"><img
+                            th:src="@{/images/icons/github-icon.png}" src="../static/images/icons/github-icon.png"></a>
+                </li>
+            </ul>
+        </div>
 
-			<div class="licence-block">
-				<h1>@The open source project</h1>
-			</div>
-		</footer>
-	</div>
+        <div class="licence-block">
+            <h1>@The open source project</h1>
+        </div>
+    </footer>
+</div>
 </body>
 </html>

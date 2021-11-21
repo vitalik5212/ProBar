@@ -46,25 +46,25 @@
                 <div class="column-form">
                     <label>Username</label>
                     <input type="text" class="form-control" th:field="*{username}">
-					<div style="color: red" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">error</div>
+					<div class="error" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">error</div>
                 </div>
                 
                 <div class="column-form">
                     <label>Email</label>
                     <input type="text" class="form-control" th:field="*{email}">
-					<div style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">error</div>
+					<div class="error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">error</div>
                 </div>
 
                 <div class="column-form">
                     <label>Password</label>
                     <input type="password" id="password" class="form-control" th:field="*{password}">
-					<div style="color: red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">error</div>
+					<div class="error" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">error</div>
                 </div>
                 
                 <div class="column-form" onchange="comparePassword()">
                     <label>Confirm password</label>
                     <input type="password" id="repass" class="form-control">
-					<div style="color: red" id="password_error"></div>
+					<div class="error" id="password_error"></div>
                 </div>
                 <button type="submit" id="submit" class="button-submit" value="Create!">Confirm</button>
             </form>

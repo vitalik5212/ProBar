@@ -148,3 +148,7 @@ footer {
 	width: 1035px;
 	margin: 0 auto;
 }
+
+.error {
+	color: red;
+}

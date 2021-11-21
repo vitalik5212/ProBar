@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Main</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" href="../static/css/main.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/login.css}" href="../static/css/login.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!--    header-->
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div class="page">
+    <main>
+        <div class="container">
+            <form method="post" th:action="@{/login}">
+                <div th:if="${param.error}" class="error">
+                    Username or password doesn't correct.
+                </div>
+                <div th:if="${param.logout}" class="error">
+                    You have been logged out.
+                </div>
+
+                <lable for="username">Username</lable>
+                <br>
+                <input type="text" name="username" value=""><br>
+
+                <lable for="password">Password</lable>
+                <br>
+                <input type="password" name="password" value=""><br>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <div class="contacts-block">
+            <ul>
+                <li>
+                    <a href="https://www.instagram.com/vitalik_skr" target="_blank"><img
+                            th:src="@{/images/icons/instagram-icon.png}"
+                            src="../static/images/icons/instagram-icon.png"></a>
+                </li>
+                <li>
+                    <a href="https://t.me/vitalik_skr" target="_blank"><img th:src="@{/images/icons/telegram-icon.png}"
+                                                                            src="../static/images/icons/telegram-icon.png"></a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/vitalik-skr-6844981bb/" target="_blank"><img
+                            th:src="@{/images/icons/linkedin-icon.png}" src="../static/images/icons/linkedin-icon.png"></a>
+                </li>
+                <li>
+                    <a href="https://github.com/vitalik5212/ProBar" target="_blank"><img
+                            th:src="@{/images/icons/github-icon.png}" src="../static/images/icons/github-icon.png"></a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="licence-block">
+            <h1>@The open source project</h1>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

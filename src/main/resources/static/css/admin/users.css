@@ -1,0 +1,27 @@
+.user-table {
+    margin: 20px;
+    border-spacing: 0;
+    border: white 1px solid;
+}
+
+.user-table tr td{
+    border: white 0.5px solid;
+    height: 26px;
+    width: auto;
+    max-width: 150px;
+    padding: 5px;
+    margin: 0;
+}
+
+.title {
+    font-size: 15px;
+}
+
+.change-button {
+    border: none;
+}
+
+#warn {
+    color: red;
+}
+

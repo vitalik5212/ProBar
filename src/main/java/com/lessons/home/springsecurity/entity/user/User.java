@@ -1,8 +1,10 @@
 package com.lessons.home.springsecurity.entity.user;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.boot.context.properties.bind.DefaultValue;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.persistence.*;
@@ -40,6 +42,7 @@ public class User {
     @NotBlank(message = "Password cannot be empty")
     private String password;
     private boolean enabled;
+    private String enabledComment;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(
