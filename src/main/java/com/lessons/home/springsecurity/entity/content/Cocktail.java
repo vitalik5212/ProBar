@@ -1,4 +1,4 @@
-package com.lessons.home.springsecurity.entity;
+package com.lessons.home.springsecurity.entity.content;
 
 import com.lessons.home.springsecurity.logic.FileCopier;
 import lombok.*;
@@ -13,7 +13,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 @ToString
-@Getter @Setter
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @DynamicUpdate

@@ -1,6 +1,6 @@
 package com.lessons.home.springsecurity.controllers;
 
-import com.lessons.home.springsecurity.entity.Cocktail;
+import com.lessons.home.springsecurity.entity.content.Cocktail;
 import com.lessons.home.springsecurity.services.CocktailService;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
@@ -21,9 +21,9 @@ public class CocktailController {
     }
 
     @GetMapping("/cocktails")
-    public String cocktails (Model model,
-                                  @RequestParam("page") Optional<Integer> page,
-                                  @RequestParam("size") Optional<Integer> size) {
+    public String cocktails(Model model,
+                            @RequestParam("page") Optional<Integer> page,
+                            @RequestParam("size") Optional<Integer> size) {
         int pageNumber = page.orElse(1);
         int pageSize = size.orElse(6);
 
@@ -36,8 +36,8 @@ public class CocktailController {
     }
 
     @GetMapping("/cocktail/{id}")
-    public String cocktail (Model model,
-                            @PathVariable Long id) {
+    public String cocktail(Model model,
+                           @PathVariable Long id) {
         model.addAttribute("cocktail", cocktailService.getObjectById(id));
         return "cocktail";
     }

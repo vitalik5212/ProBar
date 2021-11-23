@@ -1,6 +1,6 @@
 package com.lessons.home.springsecurity.repositories;
 
-import com.lessons.home.springsecurity.entity.GeneralInfo;
+import com.lessons.home.springsecurity.entity.content.GeneralInfo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

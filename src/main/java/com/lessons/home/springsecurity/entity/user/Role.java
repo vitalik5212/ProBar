@@ -5,17 +5,23 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.io.Serial;
+import java.io.Serializable;
 
 /**
- *  Persistent object that has roles for Users in Spring Security
+ * Persistent object that has roles for Users in Spring Security
  *
  * @author Vitalik Skuratovskyj
  */
 @NoArgsConstructor
-@Getter @Setter
+@Getter
+@Setter
 @Entity
 @Table(name = "roles")
-public class Role {
+public class Role implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 652650673263298730L;
 
     @Id
     @Column(name = "role_id")

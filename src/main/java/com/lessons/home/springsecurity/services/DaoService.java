@@ -10,8 +10,6 @@ import java.util.Collection;
  */
 public interface DaoService<T> {
 
-    Collection<String> getAllObjectsName();
-
     Collection<T> getAllObjects();
 
     T getObjectById(Long id);

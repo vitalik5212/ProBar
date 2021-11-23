@@ -9,19 +9,26 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.io.Serial;
+import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
 /**
  * Persistent object "User" for Spring Security
  *
- * @author  Vitalik Skuratovskyj
+ * @author Vitalik Skuratovskyj
  */
 @NoArgsConstructor
-@Getter @Setter
+@Getter
+@Setter
 @Entity
 @Table(name = "users")
-public class User {
+public class User implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = -6511421719057179516L;
 
     @Id
     @Column(name = "user_id")
@@ -39,7 +46,20 @@ public class User {
     @Size(min = 6, max = 64, message = "Wrong format, the password range is from 6 to 64")
     @NotBlank(message = "Password cannot be empty")
     private String password;
+
     private boolean enabled;
+
+    private String enableMessage;
+
+    private String descriptions;
+
+    @NotBlank
+    @Column(name = "date_of_registrations")
+    private LocalDate dateOfRegistrations;
+
+    @NotBlank
+    @Column(name = "date_of_birthday")
+    private LocalDate dateOfBirthday;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(

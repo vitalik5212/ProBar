@@ -1,6 +1,6 @@
 package com.lessons.home.springsecurity.repositories;
 
-import com.lessons.home.springsecurity.entity.Ingredient;
+import com.lessons.home.springsecurity.entity.content.Ingredient;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

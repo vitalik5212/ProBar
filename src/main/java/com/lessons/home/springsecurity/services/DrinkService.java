@@ -1,7 +1,6 @@
 package com.lessons.home.springsecurity.services;
 
-import com.lessons.home.springsecurity.entity.Cocktail;
-import com.lessons.home.springsecurity.entity.Drink;
+import com.lessons.home.springsecurity.entity.content.Drink;
 import com.lessons.home.springsecurity.repositories.DrinkRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -46,7 +45,9 @@ public class DrinkService implements DaoService<Drink> {
     public Drink getObjectById(Long id) {
         Optional<Drink> drinkOptional = drinkRepository.findById(id);
 
-        if(drinkOptional.isEmpty()) throw new IllegalStateException("Drink with id " + id + " does not exist");
+        if (drinkOptional.isEmpty()) {
+            throw new IllegalStateException("Drink with id " + id + " does not exist");
+        }
 
         return drinkOptional.get();
     }
@@ -55,7 +56,9 @@ public class DrinkService implements DaoService<Drink> {
     public Drink getObjectByName(String name) {
         Drink drink = drinkRepository.findByName(name);
 
-        if(drink == null) throw new IllegalStateException("Drink with name " + name + " does not exist");
+        if (drink == null) {
+            throw new IllegalStateException("Drink with name " + name + " does not exist");
+        }
 
         return drink;
     }
@@ -67,13 +70,17 @@ public class DrinkService implements DaoService<Drink> {
 
     @Override
     public void update(Drink drink) {
-        if(drink == null) throw new NullPointerException("Cocktail cannot be null");
+        if (drink == null) {
+            throw new NullPointerException("Cocktail cannot be null");
+        }
         drinkRepository.save(drink);
     }
 
     @Override
     public void create(Drink drink) {
-        if(drink == null) throw new NullPointerException("Cocktail cannot be null");
+        if (drink == null) {
+            throw new NullPointerException("Cocktail cannot be null");
+        }
         drinkRepository.save(drink);
     }
 }

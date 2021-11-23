@@ -1,6 +1,6 @@
 package com.lessons.home.springsecurity.controllers;
 
-import com.lessons.home.springsecurity.entity.Drink;
+import com.lessons.home.springsecurity.entity.content.Drink;
 import com.lessons.home.springsecurity.services.DrinkService;
 import com.lessons.home.springsecurity.services.IngredientService;
 import org.springframework.data.domain.Page;

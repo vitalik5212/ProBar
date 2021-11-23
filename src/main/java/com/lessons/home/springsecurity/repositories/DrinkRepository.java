@@ -1,6 +1,6 @@
 package com.lessons.home.springsecurity.repositories;
 
-import com.lessons.home.springsecurity.entity.Drink;
+import com.lessons.home.springsecurity.entity.content.Drink;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -1,4 +1,4 @@
-package com.lessons.home.springsecurity.entity;
+package com.lessons.home.springsecurity.entity.content;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,7 +20,8 @@ import java.io.Serializable;
 @DynamicInsert
 @DynamicUpdate
 @NoArgsConstructor
-@Getter @Setter
+@Getter
+@Setter
 @AllArgsConstructor
 public class GeneralInfo implements Serializable {
 

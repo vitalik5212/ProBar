@@ -1,4 +1,4 @@
-package com.lessons.home.springsecurity.entity;
+package com.lessons.home.springsecurity.entity.content;
 
 import lombok.*;
 import org.hibernate.annotations.DynamicInsert;

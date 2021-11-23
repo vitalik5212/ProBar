@@ -1,6 +1,6 @@
 package com.lessons.home.springsecurity.services;
 
-import com.lessons.home.springsecurity.entity.Ingredient;
+import com.lessons.home.springsecurity.entity.content.Ingredient;
 import com.lessons.home.springsecurity.repositories.IngredientRepository;
 import org.springframework.stereotype.Service;
 
@@ -36,7 +36,9 @@ public class IngredientService implements DaoService<Ingredient> {
     public Ingredient getObjectById(Long id) {
         Optional<Ingredient> ingredientOptional = ingredientRepository.findById(id);
 
-        if(ingredientOptional.isEmpty()) throw new IllegalStateException("Ingredient with id " + id + " does not exist");
+        if (ingredientOptional.isEmpty()) {
+            throw new IllegalStateException("Ingredient with id " + id + " does not exist");
+        }
 
         return ingredientOptional.get();
     }
@@ -45,7 +47,9 @@ public class IngredientService implements DaoService<Ingredient> {
     public Ingredient getObjectByName(String name) {
         Ingredient ingredient = ingredientRepository.findByName(name);
 
-        if(ingredient == null) throw new IllegalStateException("Ingredient with name " + name + " does not exist");
+        if (ingredient == null) {
+            throw new IllegalStateException("Ingredient with name " + name + " does not exist");
+        }
 
         return ingredient;
     }
@@ -57,13 +61,17 @@ public class IngredientService implements DaoService<Ingredient> {
 
     @Override
     public void update(Ingredient ingredient) {
-        if(ingredient == null) throw new NullPointerException("Ingredient cannot be null");
+        if (ingredient == null) {
+            throw new NullPointerException("Ingredient cannot be null");
+        }
         ingredientRepository.save(ingredient);
     }
 
     @Override
     public void create(Ingredient ingredient) {
-        if(ingredient == null) throw new NullPointerException("Ingredient cannot be null");
+        if (ingredient == null) {
+            throw new NullPointerException("Ingredient cannot be null");
+        }
         ingredientRepository.save(ingredient);
     }
 }
