@@ -23,8 +23,7 @@ import java.util.Set;
 public class Drink implements Product, Serializable {
 
     @Serial
-    @Transient
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 3588618364132477295L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

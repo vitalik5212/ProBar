@@ -23,8 +23,7 @@ import java.util.Set;
 public class Ingredient implements Product, Serializable {
 
     @Serial
-    @Transient
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 8607320727992639765L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

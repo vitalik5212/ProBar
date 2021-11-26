@@ -33,7 +33,7 @@ public class User implements Serializable {
     @Id
     @Column(name = "user_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @NotBlank(message = "Email cannot be empty")
     @Email(message = "Wrong format for email")
@@ -54,7 +54,7 @@ public class User implements Serializable {
     private String descriptions;
 
     @NotBlank
-    @Column(name = "date_of_registrations")
+    @Column(name = "date_of_registrations", updatable = false)
     private LocalDate dateOfRegistrations;
 
     @NotBlank

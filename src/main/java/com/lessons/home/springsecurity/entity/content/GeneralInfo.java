@@ -26,8 +26,7 @@ import java.io.Serializable;
 public class GeneralInfo implements Serializable {
 
     @Serial
-    @Transient
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = -2937584079101617756L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

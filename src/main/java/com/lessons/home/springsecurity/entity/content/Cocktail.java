@@ -24,8 +24,7 @@ import java.util.Set;
 public class Cocktail implements Product, Serializable {
 
     @Serial
-    @Transient
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 5319197621899974129L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -17,7 +17,6 @@ public class IngredientService implements DaoService<Ingredient> {
         this.ingredientRepository = ingredientRepository;
     }
 
-    @Override
     public Collection<String> getAllObjectsName() {
         return ingredientRepository.getAllNames();
     }

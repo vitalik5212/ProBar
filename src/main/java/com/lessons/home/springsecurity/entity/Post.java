@@ -37,8 +37,10 @@ public class Post implements Serializable {
             columnDefinition = "varchar(1500)")
     private String textContent;
 
+    private String linkForImage;
+
     @NotNull
-    @Column(name = "date_of_create")
+    @Column(name = "date_of_create", updatable = false)
     private LocalDate dateOfCreate;
 
     private Integer raiting;
@@ -50,7 +52,8 @@ public class Post implements Serializable {
     @ManyToOne(fetch = FetchType.EAGER)
     private User author;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.REMOVE,
+            fetch = FetchType.LAZY)
     @JoinColumn(name = "post_id",
             columnDefinition = "bigint")
     private Set<Comment> comments = new HashSet<>();

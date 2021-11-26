@@ -26,7 +26,6 @@ public class DrinkService implements DaoService<Drink> {
         return page;
     }
 
-    @Override
     public Collection<String> getAllObjectsName() {
         return drinkRepository.getAllNames();
     }

@@ -1,7 +1,7 @@
 package com.lessons.home.springsecurity.services;
 
-import com.lessons.home.springsecurity.entity.user.Role;
 import com.lessons.home.springsecurity.entity.user.MyUserDetails;
+import com.lessons.home.springsecurity.entity.user.Role;
 import com.lessons.home.springsecurity.entity.user.User;
 import com.lessons.home.springsecurity.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,13 +19,17 @@ public class UserService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) {
-       User user = userRepository.getUserByUsername(username);
+        User user = userRepository.getUserByUsername(username);
 
-       return new MyUserDetails(user);
+        return new MyUserDetails(user);
     }
 
     public User findUserByUsername(String username) {
         return userRepository.getUserByUsername(username);
+    }
+
+    public User getUserById(Long id) {
+        return userRepository.findById(id).get();
     }
 
     public void create(User user, Role role) {
