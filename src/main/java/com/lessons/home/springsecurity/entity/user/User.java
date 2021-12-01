@@ -12,8 +12,6 @@ import javax.validation.constraints.Size;
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * Persistent object "User" for Spring Security
@@ -61,13 +59,12 @@ public class User implements Serializable {
     @Column(name = "date_of_birthday")
     private LocalDate dateOfBirthday;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "users_roles",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id")
-    )
-    private Set<Role> roles = new HashSet<>();
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+//    @JoinTable(name = "users_roles",
+//            joinColumns = @JoinColumn(name = "user_id"),
+//            inverseJoinColumns = @JoinColumn(name = "role_id"))
+    @JoinColumn(name = "role_id")
+    private Role role;
 
     public String encodePassword(String password) {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
