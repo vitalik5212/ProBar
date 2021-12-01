@@ -5,9 +5,11 @@ import com.lessons.home.springsecurity.dto.post.NewPostDto;
 import com.lessons.home.springsecurity.dto.user.PageWithPostsDto;
 import com.lessons.home.springsecurity.services.CommentService;
 import com.lessons.home.springsecurity.services.PostService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@Tag(name = "PostController")
 public class PostController {
 
     private final PostService postService;
@@ -30,9 +32,8 @@ public class PostController {
     }
 
     @PostMapping("/post")
-    public String createPost(NewPostDto newPost) {
-        Long id = postService.create(newPost);
-        return "redirect:/post?id=" + id;
+    public FullPostDto createPost(@RequestBody NewPostDto newPost) {
+        return postService.create(newPost);
     }
 
     @PutMapping("/post")
@@ -41,7 +42,7 @@ public class PostController {
         return "redirect:/post?id=" + fullPostDto.getId();
     }
 
-    @PostMapping("/post/delete")
+    @DeleteMapping("/post")
     public String deletePost(@RequestParam Long id) {
         postService.delete(id);
         return "redirect:/posts";

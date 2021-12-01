@@ -1,5 +1,6 @@
-package com.lessons.home.springsecurity.dto.post;
+package com.lessons.home.springsecurity.dto;
 
+import com.lessons.home.springsecurity.dto.user.UserForViewDto;
 import lombok.*;
 import lombok.extern.jackson.Jacksonized;
 
@@ -11,13 +12,12 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(toBuilder = true)
-public class ShortPostDto {
+public class CommentDto {
 
     private Long id;
-    private String name;
-    private String linkForImage;
+    private String text;
     private LocalDate dateOfCreate;
     private boolean likes;
     private boolean dislikes;
-    private int raiting;
+    private UserForViewDto author;
 }

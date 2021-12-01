@@ -1,14 +1,12 @@
 package com.lessons.home.springsecurity.dto.user;
 
 import com.lessons.home.springsecurity.dto.post.ShortPostDto;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.extern.jackson.Jacksonized;
 
 import java.util.Set;
 
+@Setter
 @Getter
 @Jacksonized
 @NoArgsConstructor

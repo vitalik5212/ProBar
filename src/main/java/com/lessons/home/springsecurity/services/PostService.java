@@ -8,17 +8,17 @@ import com.lessons.home.springsecurity.entity.Post;
 import com.lessons.home.springsecurity.entity.user.User;
 import com.lessons.home.springsecurity.mapper.PostMapper;
 import com.lessons.home.springsecurity.repositories.PostRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.Transient;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -28,12 +28,13 @@ public class PostService {
     private final PostRepository postRepository;
     private final UserService userService;
 
-    private PostMapper postMapper;
-
     public PostService(PostRepository postRepository, UserService userService) {
         this.postRepository = postRepository;
         this.userService = userService;
     }
+
+    @Autowired
+    private PostMapper postMapper;
 
     public PageWithPostsDto getPagePosts(int page, int size) {
         Pageable pageable = PageRequest.of(page, size);
@@ -51,12 +52,7 @@ public class PostService {
     }
 
     public Collection<Post> getAllPosts() {
-        List<Post> posts = new ArrayList<>();
-        postRepository
-                .findAll()
-                .forEach(posts::add);
-
-        return posts;
+        return postRepository.findAll();
     }
 
     public FullPostDto getPostById(Long id) {
@@ -75,6 +71,7 @@ public class PostService {
     }
 
     @Transient
+    @PreAuthorize("hasRole('USER') or hasRole('EDITOR') or hasRole('ADMIN')")
     public void delete(Long id) {
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
         Post post = postRepository.getOne(id);
@@ -88,6 +85,7 @@ public class PostService {
         }
     }
 
+    @PreAuthorize("hasRole('USER') or hasRole('EDITOR') or hasRole('ADMIN')")
     public void update(FullPostDto post) {
         if (post == null) {
             throw new NullPointerException("Post cannot be null");
@@ -98,8 +96,7 @@ public class PostService {
         postRepository.save(updatedPost);
     }
 
-    @Transient
-    public Long create(NewPostDto post) {
+    public FullPostDto create(NewPostDto post) {
         if (post == null) {
             throw new NullPointerException("Post cannot be null");
         }
@@ -113,6 +110,6 @@ public class PostService {
 
         postRepository.save(newPost);
 
-        return getPostByName(post.getName()).getId();
+        return postMapper.toFullDto(newPost);
     }
 }

@@ -1,4 +1,4 @@
-package com.lessons.home.springsecurity.dto.post;
+package com.lessons.home.springsecurity.dto.user;
 
 import lombok.*;
 import lombok.extern.jackson.Jacksonized;
@@ -9,8 +9,8 @@ import lombok.extern.jackson.Jacksonized;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(toBuilder = true)
-public class NewPostDto {
+public class UserForViewDto {
 
-    private String name;
-    private String textContent;
+    private Long id;
+    private String username;
 }
