@@ -6,6 +6,5 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface GeneralRepository extends JpaRepository<GeneralInfo, Long> {
 
-    @Query(value = "SELECT c FROM GeneralInfo c WHERE c.name = ?1")
-    public GeneralInfo findByName(String name);
+    GeneralInfo findFirstByName(String name);
 }
